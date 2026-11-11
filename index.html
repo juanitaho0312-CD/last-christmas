@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Last Christmas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&family=Noto+Serif+TC:wght@400;600&family=Noto+Sans+TC:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+<div id="map" aria-label="旅程地圖"></div>
+<canvas id="snow" aria-hidden="true"></canvas>
+
+<header class="bar">
+  <div class="brand">
+    <span class="brand-title">Last Christmas</span>
+    <span class="brand-sub">2025.11.26 – 12.06 · 愛沙尼亞與挪威</span>
+  </div>
+  <div class="controls">
+    <button id="btnTour" class="pill primary" type="button">▶ 播放旅程</button>
+    <button id="btnMusic" class="pill" type="button" aria-pressed="false">♪ 音樂</button>
+  </div>
+</header>
+
+<nav class="side" aria-label="篇章與交通方式">
+  <div class="side-group">
+    <div class="side-label">篇章</div>
+    <div id="chapters" class="chips"></div>
+  </div>
+  <div class="side-group">
+    <div class="side-label">交通方式</div>
+    <ul class="legend">
+      <li><i class="ln air"></i>飛機</li>
+      <li><i class="ln bus"></i>巴士</li>
+      <li><i class="ln boat"></i>峽灣遊船</li>
+      <li><i class="ln rail"></i>火車</li>
+      <li><i class="ln walk"></i>步行與市區交通</li>
+    </ul>
+  </div>
+</nav>
+
+<footer class="days" id="days" aria-label="日期"></footer>
+
+<section id="intro" class="intro">
+  <div class="intro-card">
+    <p class="intro-kicker">聖誕前夕的北方之旅</p>
+    <h1>Last Christmas</h1>
+    <p class="intro-line">從桃園出發，經伊斯坦堡到塔林的聖誕市集，<br>再往西飛到卑爾根，搭巴士、船與火車穿過峽灣，最後抵達奧斯陸。</p>
+    <p class="intro-stats"><b>11</b> 天　<b id="statS">0</b> 站　<b id="statP">0</b> 張照片　<b id="statV">0</b> 段影片</p>
+    <div class="intro-actions">
+      <button id="introTour" class="pill primary big" type="button">▶ 播放旅程</button>
+      <button id="introFree" class="pill big" type="button">自由探索地圖</button>
+    </div>
+    <p class="intro-note">點地圖上任何一個點，就會打開那一站的照片與短片。</p>
+  </div>
+</section>
+
+<section id="card" class="card" hidden aria-modal="true" role="dialog">
+  <div class="card-inner">
+    <button class="card-close" id="cardClose" type="button" aria-label="關閉">×</button>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="cardText">☰ 這一站</button>
+    <div class="stage">
+      <div id="stageMedia" class="stage-media"></div>
+      <button class="nav prev" id="mPrev" type="button" aria-label="上一張">‹</button>
+      <button class="nav next" id="mNext" type="button" aria-label="下一張">›</button>
+      <button class="snd" id="mSound" type="button" hidden aria-pressed="false">🔇 原聲</button>
+      <div class="cap"><span id="capDate"></span><b id="capTitle"></b></div>
+      <div class="stage-meta"><span id="mWhen"></span><span id="mCount"></span></div>
+      <div class="progress"><i id="mProg"></i></div>
+    </div>
+    <div class="text" id="cardText">
+      <div class="stamp" id="cMode"></div>
+      <p class="c-date" id="cDate"></p>
+      <h2 id="cTitle"></h2>
+      <p class="c-sub" id="cSub"></p>
+      <p class="c-body" id="cBody"></p>
+      <div class="thumbs" id="thumbs"></div>
+      <div class="card-nav">
+        <button id="sPrev" class="pill" type="button">← 上一站</button>
+        <button id="sAuto" class="pill" type="button" aria-pressed="true">自動播放</button>
+        <button id="sNext" class="pill" type="button">下一站 →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="data.js?v=1"></script>
+<script src="stops.js?v=1"></script>
+<script src="share.js"></script>
+<script src="music.js?v=1"></script>
+<script src="app.js?v=1"></script>
+</body>
+</html>
