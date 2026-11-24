@@ -18,7 +18,7 @@
   const map = L.map('map', { zoomControl: false, worldCopyJump: true, minZoom: 2, zoomSnap: 0.5 }).setView([52, 40], 3);
   L.control.zoom({ position: 'bottomright' }).addTo(map);
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
-    maxZoom: 18, maxNativeZoom: 16, attribution: 'Tiles &copy; Esri &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors',
+    maxZoom: 18, maxNativeZoom: 16, attribution: 'Photos &amp; videos &copy; Juanita Wanders · <a href="https://www.instagram.com/juanita.wanders/" target="_blank" rel="noopener">@juanita.wanders</a> | Tiles &copy; Esri &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors',
   }).addTo(map);
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
     maxZoom: 18, maxNativeZoom: 16, opacity: 0.75,

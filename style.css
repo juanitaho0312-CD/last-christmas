@@ -97,6 +97,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .intro-stats b { font-family: var(--display); font-size: 24px; color: var(--cream); font-weight: 600; margin-right: 2px; font-variant-numeric: lining-nums; }
 .intro-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .intro-note { font-size: 12px; color: var(--muted); margin-top: 22px; }
+.intro-credit { font-size: 11px; color: var(--muted); margin-top: 8px; letter-spacing: 0.04em; }
 
 /* ---------- postcard ---------- */
 .card { position: fixed; inset: 0; z-index: 800; display: grid; place-items: center; padding: 24px; background: rgba(5, 9, 17, 0.72); backdrop-filter: blur(3px); }
